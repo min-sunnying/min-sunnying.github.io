@@ -2,3 +2,10 @@
 layout: home
 author_profile: true
 ---
+
+<div>
+    {% capture about_content %}
+    {% include_relative _includes/about.md %}
+    {% endcapture %}
+    {{ about_content | markdownify }}
+  </div>

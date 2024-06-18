@@ -1,0 +1,4 @@
+{% capture about_contents %}
+{% include_relative about.md %}
+{% endcapture %}
+{{ about_contents | markdownify }}
