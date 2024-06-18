@@ -3,6 +3,6 @@ main:
   - title: "About Me"
     url: /
   - title: "Publications & Projects"
-    url: /projects/
+    url: /publication/
   - title: "Resume"
     url: /assets/resume.pdf

@@ -121,9 +121,9 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "9909cindy@email.com"
-    - label: "Website"
+    - label: "Google Scholar"
       icon: "fas fa-fw fa-link"
-      url: "https://min-sunnying.github.io"
+      url: "https://scholar.google.com/citations?user=Y5i5RmEAAAAJ&hl=ko&oi=sra"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -310,23 +310,28 @@ compress_html:
     envs: development
 
 
-# Defaults
+# # Defaults
+# defaults:
+#   # _posts
+#   - scope:
+#       path: ""
+#       type: posts
+#     values:
+#       layout: single
+#       author_profile: true
+#       read_time: true
+#       comments: # true
+#       share: true
+#       related: true
+collections:
+  publication:
+    output: true
+    permalink: /publication/:title/
+
 defaults:
-  # _posts
   - scope:
-      path: ""
-      type: posts
+      path: "_posts"
+      type: "posts"
     values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: # true
-      share: true
-      related: true
-  # _pages                      : 해당 하단 영역이 새로 추가되었습니다.
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+      layout: "post"
+      categories: "Publication"
