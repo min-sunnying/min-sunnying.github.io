@@ -327,6 +327,9 @@ collections:
   publication:
     output: true
     permalink: /publication/:title/
+  news:
+    output: true
+    permalink: /news/:title/
 
 defaults:
   - scope:
