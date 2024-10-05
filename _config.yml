@@ -27,11 +27,44 @@ url: "https://min-sunnying.github.io" # the base hostname & protocol for your si
 twitter_username: jekyllrb
 github_username:  jekyll
 
+include:
+  - .htaccess
+  - _pages
+  
+# Outputting
+permalink: /:categories/:title/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+# Pagination with jekyll-
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
 pagination:
-  enabled: true
-  per_page: 5
+  # Set enabled to true to use paginate v2
+  # enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 10
   permalink: '/page/:num/'
-  title: ':title - page :num of :max'
+  title: ':title - page :num'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  category: 'posts'
+  tag: ''
+  locale: ''
+  trail:
+    before: 2
+    after: 2
 
 author:
   name             : "Minsun Kim"
@@ -66,17 +99,17 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
+# defaults:
+#   - scope:
+#       path: ""
+#       type: "posts"
+#     values:
+#       layout: "post"
+#   - scope:
+#       path: ""
+#       type: "pages"
+#     values:
+#       layout: "page"
 
 collections:
   publication:
@@ -85,3 +118,10 @@ collections:
   news:
     output: true
     permalink: /news/:title/
+
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values: 
+      layout: "single"
