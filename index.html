@@ -1,0 +1,11 @@
+---
+layout: home
+author_profile: true
+---
+
+<div>
+    {% capture about_content %}
+    {% include about.md %}
+    {% endcapture %}
+    {{ about_content | markdownify }}
+  </div>

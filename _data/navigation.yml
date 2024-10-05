@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: "About Me"
+    url: /
+  - title: "Publications & Projects"
+    url: /publication/
+  - title: "News"
+    url: /news/
+  - title: "Resume"
+    url: /assets/resume.pdf
