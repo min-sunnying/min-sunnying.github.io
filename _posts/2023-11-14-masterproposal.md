@@ -6,4 +6,6 @@ categories:
     - News
 ---
 
-![Master Theses Poster](/assets/images/masterposter.jpg)
+I successfully finished thesis proposal.
+
+<img src="/assets/images/masterposter.jpg" alt="drawing" width="200"/>
