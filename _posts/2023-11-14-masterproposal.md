@@ -8,4 +8,4 @@ categories:
 
 I successfully finished thesis proposal.
 
-<img src="/assets/images/masterposter.jpg" alt="drawing" width="200"/>
+<img src="/assets/images/masterposter.jpg" alt="drawing" width="200" style="margin-left: auto; margin-right: auto; display: block;"/>
