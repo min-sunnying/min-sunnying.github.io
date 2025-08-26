@@ -4,4 +4,4 @@ I am interested in designing large language model (LLM) applications for educati
 
 I earned my M.S in [Industrial Design](https://id.kaist.ac.kr) at [KAIST](https://www.kaist.ac.kr/en/) (Korea Advanced Institute of Science and Technology) and  B.S in [Electrical Engineering](https://ee.kaist.ac.kr/en/) with a Minor in Industrial Design from KAIST. During my undergraduate studies, I worked as a Research and Development Engineer at [Repla Inc.](http://repla.kr/?redirect=no), where I contributed to UX/UI design and developed control interfaces for automated plastic sorting machines.
 
-I have co-authored multiple publications in reputable conferences and workshops, including NeurIPS, EMNLP, LREC, and ACM Learning @ Scale. My work often involves collaborative projects aimed at enhancing learning experiences through AI-driven tools.
+I have co-authored multiple publications in reputable conferences and workshops, including NeurIPS, EMNLP, LREC, and ACM Learning @ Scale. My work often involves collaborative projects aimed at enhancing learning experiences through AI-driven tools.^^
