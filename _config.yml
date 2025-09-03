@@ -69,7 +69,11 @@ author:
   name             : "Minsun Kim"
   avatar           : "/assets/images/minsun_face.JPG"
   bio              : "UX + LLM LOVER"
-  location         : "South Korea"
+  location         : "Blacksburg, VA, USA"
+  links:
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar ai-fw"
+      url: "https://scholar.google.com/citations?user=Y5i5RmEAAAAJ&hl=ko"
 
 # Build settings
 theme: "minimal-mistakes-jekyll"
