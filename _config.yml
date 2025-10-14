@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Hello, I'm Minsun Kim
+title: Minsun Kim
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   My personal blog
@@ -68,7 +68,7 @@ pagination:
 author:
   name             : "Minsun Kim"
   avatar           : "/assets/images/minsun_face.JPG"
-  bio              : "UX + LLM LOVER"
+  bio              : "UX + LLM + Education"
   location         : "Blacksburg, VA, USA"
   links:
     - label: "Google Scholar"

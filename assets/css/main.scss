@@ -4,9 +4,61 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
+.masthead .site-title {
+  display: inline-flex;
+  align-items: center;
+  animation: site-title-entrance 900ms ease-out both;
+}
+
+.masthead .site-title,
+.masthead .site-title:visited {
+  color: #640000;
+}
+
+.masthead .site-title:hover,
+.masthead .site-title:focus {
+  color: #450000;
+}
+
+@keyframes site-title-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .about-content {
   font-size: 0.8rem;
   line-height: 1.6;
+}
+
+.page__content {
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.page__content h1,
+.page__title {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.archive p {
+  margin: 0.4rem 0 0;
+  line-height: 1.4;
+}
+
+.archive a {
+  color: #640000;
 }
 
 .page__content a,
@@ -145,7 +197,7 @@
 }
 
 .collection-list__date {
-  font-size: 0.65rem;
+  font-size: 0.4rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #777;
@@ -153,13 +205,14 @@
 }
 
 .collection-list__title {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
 }
 
 .collection-list__authors {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
+  font-style: italic;
   margin: 0.15rem 0 0;
 }
 
@@ -168,10 +221,11 @@
 }
 
 .collection-list__venue {
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   margin: 0.1rem 0 0;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0em;
 }
 
 .collection-list__role,
@@ -182,8 +236,9 @@
 
 .collection-list__abstract {
   margin: 0.2rem 0 0;
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   line-height: 1.4;
+  color: #666;
 }
 
 .collection-list__links {
@@ -201,4 +256,15 @@
 
 .collection-list__link-sep {
   color: #999;
+}
+
+.collection-list__newsdate {
+  width: 3.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

@@ -14,47 +14,13 @@ permalink: /news/
     <ul class="collection-list">
       {% for post in year_items %}
       <li class="collection-list__item">
-        {% assign thumb = post.thumbnail %}
-        <div class="collection-list__thumb">
-          {% if thumb %}
-          {% if thumb contains '://' %}
-          <img src="{{ thumb }}" alt="{{ post.title | escape }} thumbnail">
-          {% else %}
-          <img src="{{ thumb | relative_url }}" alt="{{ post.title | escape }} thumbnail">
-          {% endif %}
-          {% else %}
-          <span class="collection-list__placeholder">{{ post.title | slice: 0, 1 | upcase }}</span>
-          {% endif %}
-        </div>
-        <div class="collection-list__meta">
-          <a class="collection-list__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <div class="collection-list__newsdate">
           <p class="collection-list__date">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
           </p>
-          {% if post.organization %}
-          <p class="collection-list__org">{{ post.organization }}</p>
-          {% endif %}
-          {% if post.location %}
-          <p class="collection-list__location">{{ post.location }}</p>
-          {% endif %}
-          {% if post.journal %}
-          <p class="collection-list__venue">{{ post.journal }}</p>
-          {% endif %}
-          {% if post.role %}
-          <p class="collection-list__role">{{ post.role }}</p>
-          {% endif %}
-          {% if post.authors %}
-          <p class="collection-list__authors">{{ post.authors }}</p>
-          {% endif %}
-          {% assign summary = post.summary | default: post.excerpt %}
-          {% if summary %}
-          <p class="collection-list__abstract">{{ summary | markdownify | strip_html }}</p>
-          {% endif %}
-          {% if post.external_link %}
-          <p class="collection-list__links">
-            <a class="collection-list__link" href="{{ post.external_link }}">Full text</a>
-          </p>
-          {% endif %}
+        </div>
+        <div class="collection-list__meta">
+          <a class="collection-list__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         </div>
       </li>
       {% endfor %}

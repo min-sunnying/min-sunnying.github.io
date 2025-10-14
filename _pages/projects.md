@@ -28,9 +28,6 @@ permalink: /projects/
         </div>
         <div class="collection-list__meta">
           <a class="collection-list__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <p class="collection-list__date">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
-          </p>
           {% if post.role %}
           <p class="collection-list__role">{{ post.role }}</p>
           {% endif %}
