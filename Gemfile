@@ -22,3 +22,4 @@ gem "kramdown-parser-gfm"
 # 필요 시
 gem "jekyll-paginate"           # 구형 페이징
 # gem "jekyll-paginate-v2"        # 강력한 페이징(액션 빌드에서만 권장)
+gem "jekyll-remote-theme"

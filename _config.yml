@@ -79,12 +79,22 @@ author:
       url: "https://www.linkedin.com/in/min-sunnying"
 
 # Build settings
-theme: "minimal-mistakes-jekyll"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 plugins:
+  - jekyll-include-cache
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-gist
+  - jekyll-remote-theme
+
+# theme: "minimal-mistakes-jekyll"
+# plugins:
+#   - jekyll-feed
+#   - jekyll-sitemap
+#   - jekyll-paginate
+#   - jekyll-gist
 
 # Exclude from processing.
 # The following items will not be processed, by default.
