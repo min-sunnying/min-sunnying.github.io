@@ -1,4 +1,4 @@
---- 
+---
 # Main SCSS file for Minimal Mistakes
 ---
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
@@ -7,4 +7,198 @@
 .about-content {
   font-size: 0.8rem;
   line-height: 1.6;
+}
+
+.page__content a,
+.archive__subtitle a,
+.about-content a,
+.posts-compact__title,
+.collection-list__title,
+.collection-list__link {
+  color: #640000;
+}
+
+.page__content a:visited,
+.archive__subtitle a:visited,
+.about-content a:visited,
+.posts-compact__title:visited,
+.collection-list__title:visited,
+.collection-list__link:visited {
+  color: #640000;
+}
+
+.page__content a:hover,
+.page__content a:focus,
+.archive__subtitle a:hover,
+.archive__subtitle a:focus,
+.posts-compact__title:hover,
+.posts-compact__title:focus,
+.collection-list__title:hover,
+.collection-list__title:focus,
+.collection-list__link:hover,
+.collection-list__link:focus,
+.about-content a:hover,
+.about-content a:focus {
+  color: #450000;
+}
+
+.posts-compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.posts-compact__item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.4rem;
+}
+
+.posts-compact__item:last-child {
+  margin-bottom: 0;
+}
+
+.posts-compact__date {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  min-width: 3.75rem;
+}
+
+.posts-compact__title {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.collection {
+  margin-top: 1.5rem;
+}
+
+.collection__heading {
+  font-size: 0.9rem;
+  margin: 1.2rem 0 0.4rem;
+}
+
+.collection__heading:first-child {
+  margin-top: 0;
+}
+
+.collection__year + .collection__year {
+  margin-top: 1.5rem;
+}
+
+.collection-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.collection-list__item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 0.65rem;
+}
+
+.collection-list__item:last-child {
+  margin-bottom: 0;
+}
+
+.collection-list__thumb {
+  flex: 0 0 72px;
+  transform: translateY(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.collection-list__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.collection-list__placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  background: #f4e6e6;
+  color: #640000;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.collection-list__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.collection-list__date {
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #777;
+  margin: 0.1rem 0 0;
+}
+
+.collection-list__title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.collection-list__authors {
+  font-size: 0.7rem;
+  margin: 0.15rem 0 0;
+}
+
+.collection-list__meta p {
+  margin: 0.1rem 0 0;
+}
+
+.collection-list__venue {
+  font-size: 0.65rem;
+  margin: 0.1rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.collection-list__role,
+.collection-list__org,
+.collection-list__location {
+  font-size: 0.65rem;
+}
+
+.collection-list__abstract {
+  margin: 0.2rem 0 0;
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.collection-list__links {
+  margin-top: 0.25rem;
+  font-size: 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.collection-list__link {
+  text-decoration: none;
+}
+
+.collection-list__link-sep {
+  color: #999;
 }

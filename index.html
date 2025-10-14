@@ -10,3 +10,20 @@ classes: wide
     {% endcapture %}
     {{ about_content | markdownify }}
 </div>
+
+{% assign posts_by_year = site.posts | group_by_exp: 'post', 'post.date | date: "%Y"' | sort: 'name' | reverse %}
+
+{% for year in posts_by_year %}
+  {% assign year_posts = year.items | sort: 'date' | reverse %}
+  <section class="archive__group">
+    <h2 class="archive__subtitle">{{ year.name }}</h2>
+    <ul class="posts-compact">
+      {% for post in year_posts %}
+      <li class="posts-compact__item">
+        <time class="posts-compact__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+        <a class="posts-compact__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

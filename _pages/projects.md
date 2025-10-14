@@ -1,13 +1,13 @@
 ---
 layout: collection
-title: "News"
-permalink: /news/
+title: "Projects"
+permalink: /projects/
 ---
-{% assign news_posts = site.posts | where_exp: 'post', 'post.categories contains "News"' %}
-{% assign news_by_year = news_posts | group_by_exp: 'post', 'post.date | date: "%Y"' | sort: 'name' | reverse %}
+{% assign project_posts = site.posts | where_exp: 'post', 'post.categories contains "Projects"' %}
+{% assign projects_by_year = project_posts | group_by_exp: 'post', 'post.date | date: "%Y"' | sort: 'name' | reverse %}
 
-<div class="collection collection--news">
-  {% for year in news_by_year %}
+<div class="collection collection--projects">
+  {% for year in projects_by_year %}
   {% assign year_items = year.items | sort: 'date' | reverse %}
   <section class="collection__year">
     <h2 class="collection__heading">{{ year.name }}</h2>
@@ -31,6 +31,9 @@ permalink: /news/
           <p class="collection-list__date">
             <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
           </p>
+          {% if post.role %}
+          <p class="collection-list__role">{{ post.role }}</p>
+          {% endif %}
           {% if post.organization %}
           <p class="collection-list__org">{{ post.organization }}</p>
           {% endif %}
@@ -39,9 +42,6 @@ permalink: /news/
           {% endif %}
           {% if post.journal %}
           <p class="collection-list__venue">{{ post.journal }}</p>
-          {% endif %}
-          {% if post.role %}
-          <p class="collection-list__role">{{ post.role }}</p>
           {% endif %}
           {% if post.authors %}
           <p class="collection-list__authors">{{ post.authors }}</p>
