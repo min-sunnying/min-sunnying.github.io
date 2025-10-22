@@ -5,4 +5,4 @@ I earned my M.S in [Industrial Design](https://id.kaist.ac.kr) from [KAIST](http
 
 I have contributed to projects that integrate LLMs into English as a Foreign Language (EFL) education, including designing learning analytics dashboards, evaluating student–AI interactions, and developing teacher-support tools. My research has been published at venues such as ACM Learning @ Scale, NeurIPS workshops, and LREC-COLING.
 
-Beyond academia, I bring practical experience from industry—consulting on AI agent design, leading IT operations, and contributing to UX/UI projects at [KT Corp](https://corp.kt.com/eng/). With a strong interest in human-centered and ethical evaluation of AI in education, I aim to bridge cutting-edge technology with meaningful impact in learning environments.
+Beyond academia, I bring practical experience from industry—consulting on AI agent design, and governing Microsoft Power Platform at [KT Corp.](https://corp.kt.com/eng/). With a strong interest in human-centered and ethical evaluation of AI in education, I aim to bridge cutting-edge technology with meaningful impact in learning environments.
