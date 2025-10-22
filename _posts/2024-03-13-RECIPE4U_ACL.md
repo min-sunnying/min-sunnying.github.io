@@ -1,0 +1,23 @@
+---
+layout: posts
+title: "RECIPE4U: Student-ChatGPT interaction dataset in EFL writing education"
+date: 2024-03-13
+categories: 
+    - Publication
+authors: "Jieun Han, Haneul Yoo, Junho Myung, Minsun Kim, Tak Yeon Lee, So-Yeon Ahn, Alice Oh"
+journal: "In Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)"
+abstract_short: "Presents the RECIPE4U dataset capturing semester-long student-ChatGPT dialogues in EFL writing courses and outlines baseline analyses for educational LLM research."
+external_link: "https://aclanthology.org/2024.lrec-main.1193/"
+---
+
+**Authors:** Jieun Han, Haneul Yoo, Junho Myung, **Minsun Kim**, Tak Yeon Lee, So-Yeon Ahn, Alice Oh
+
+**Journal:** NeurIPS’23 Workshop on Generative AI for Education (GAIED)
+
+**Abstract:**
+The integration of generative AI in education is expanding, yet empirical analyses of large-scale and real-world interactions between students and AI systems still remain limited. Addressing this gap, we present RECIPE4U (RECIPE for University), a dataset sourced from a semester-long experiment with 212 college students in English as Foreign Language (EFL) writing courses. During the study, students engaged in dialogues with ChatGPT to revise their essays. RECIPE4U includes comprehensive records of these interactions, including conversation logs, students' intent, students' self-rated satisfaction, and students' essay edit histories. In particular, we annotate the students' utterances in RECIPE4U with 13 intention labels based on our coding schemes. We establish baseline results for two subtasks in task-oriented dialogue systems within educational contexts: intent detection and satisfaction estimation. As a foundational step, we explore student-ChatGPT interaction patterns through RECIPE4U and analyze them by focusing on students' dialogue, essay data statistics, and students' essay edits. We further illustrate potential applications of RECIPE4U dataset for enhancing the incorporation of LLMs in educational frameworks. RECIPE4U is publicly available at https://zeunie.github.io/RECIPE4U/.
+
+
+**Link:** [Read the full paper](https://aclanthology.org/2024.lrec-main.1193/)
+
+**Keywords:** machine learning, supervised learning, unsupervised learning, reinforcement learning
