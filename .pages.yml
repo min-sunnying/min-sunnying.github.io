@@ -1,0 +1,80 @@
+settings:
+  hide: true
+  content:
+    merge: true
+
+media:
+  - name: images
+    label: Images
+    input: assets/images
+    output: /assets/images
+    categories: [image]
+  - name: documents
+    label: Documents
+    input: assets/PDF
+    output: /assets/PDF
+    categories: [document]
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: _posts
+    format: yaml-frontmatter
+    subfolders: false
+    view:
+      fields: [title, date, categories]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        hidden: true
+        default: posts
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: categories
+        label: Categories
+        type: select
+        required: true
+        options:
+          multiple: true
+          creatable: true
+          values:
+            - News
+            - Projects
+            - Publication
+      - name: authors
+        label: Authors
+        type: text
+      - name: journal
+        label: Journal
+        type: string
+      - name: abstract_short
+        label: Short Abstract
+        type: text
+      - name: thumbnail
+        label: Thumbnail
+        type: image
+        options:
+          media: images
+      - name: external_link
+        label: External Link
+        type: string
+      - name: body
+        label: Content
+        type: rich-text
+        options:
+          media: images
