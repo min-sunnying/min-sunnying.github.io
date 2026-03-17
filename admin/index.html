@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Site Admin | Minsun Kim</title>
+    <meta name="robots" content="noindex,nofollow">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f5efe3;
+        --panel: rgba(255, 252, 246, 0.88);
+        --line: rgba(54, 38, 22, 0.14);
+        --text: #24170b;
+        --muted: #645543;
+        --accent: #b14f21;
+        --accent-strong: #8b3d18;
+        --shadow: 0 24px 60px rgba(54, 38, 22, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.75), transparent 34%),
+          radial-gradient(circle at bottom right, rgba(177, 79, 33, 0.18), transparent 28%),
+          linear-gradient(135deg, #f7f2e7 0%, #efe3cf 52%, #e7d4bc 100%);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      main {
+        width: min(720px, 100%);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        padding: 32px;
+        backdrop-filter: blur(8px);
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: "Iowan Old Style", "Palatino Linotype", serif;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1;
+      }
+
+      .lede {
+        margin: 16px 0 0;
+        font-size: 1.03rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 28px 0 26px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button-primary {
+        color: #fffaf4;
+        background: var(--accent);
+      }
+
+      .button-primary:hover {
+        background: var(--accent-strong);
+      }
+
+      .button-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid var(--line);
+      }
+
+      .meta {
+        display: grid;
+        gap: 12px;
+        padding: 18px 20px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.55);
+        border: 1px solid var(--line);
+      }
+
+      .meta strong,
+      code {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      ol {
+        margin: 22px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .note {
+        margin: 22px 0 0;
+        font-size: 0.94rem;
+        line-height: 1.7;
+        color: var(--muted);
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding: 24px;
+          border-radius: 24px;
+        }
+
+        .actions {
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Site Admin</p>
+      <h1>Edit posts on the web</h1>
+      <p class="lede">
+        This site now uses Pages CMS for browser-based editing. You can create, update, and publish
+        posts in <code>_posts</code> without opening VS Code.
+      </p>
+
+      <div class="actions">
+        <a class="button button-primary" href="https://app.pagescms.org" target="_blank" rel="noopener">
+          Open Pages CMS
+        </a>
+        <a class="button button-secondary" href="/" rel="noopener">
+          Back to site
+        </a>
+      </div>
+
+      <div class="meta">
+        <div><strong>Repository</strong>: <code>min-sunnying/min-sunnying.github.io</code></div>
+        <div><strong>Collection</strong>: <code>Posts</code></div>
+        <div><strong>Media</strong>: <code>assets/images</code></div>
+      </div>
+
+      <ol>
+        <li>Sign in with GitHub.</li>
+        <li>Open <code>min-sunnying/min-sunnying.github.io</code>.</li>
+        <li>Choose <code>Posts</code> to write or edit an entry.</li>
+        <li>Save changes and GitHub Pages will deploy automatically.</li>
+      </ol>
+
+      <p class="note">
+        This page is a launcher. GitHub Pages is static hosting, so an authenticated in-page editor
+        would require a separate backend service.
+      </p>
+    </main>
+  </body>
+</html>
