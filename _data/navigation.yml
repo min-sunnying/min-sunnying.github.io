@@ -8,5 +8,7 @@ main:
     url: /projects/
   - title: "News"
     url: /news/
+  - title: "Blog"
+    url: /blog/
   - title: "Resume"
     url: https://docs.google.com/document/d/1q0i8ISuBURbowg-iwDiSI_4bHiM2xL_P/edit?usp=share_link&ouid=114444359828919144322&rtpof=true&sd=true

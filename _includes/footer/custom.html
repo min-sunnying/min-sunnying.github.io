@@ -1,3 +1,27 @@
 <!-- start custom footer snippets -->
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var racks = document.querySelectorAll(".blog-rack");
+
+    racks.forEach(function (rack) {
+      var items = Array.from(rack.querySelectorAll(".rack-item"));
+
+      items.forEach(function (item) {
+        item.addEventListener("toggle", function () {
+          if (!item.open) {
+            return;
+          }
+
+          items.forEach(function (other) {
+            if (other !== item) {
+              other.open = false;
+            }
+          });
+        });
+      });
+    });
+  });
+</script>
+
 <!-- end custom footer snippets -->
