@@ -409,6 +409,21 @@ img {
   align-items: stretch;
 }
 
+.hero-card__content,
+.profile-panel,
+.profile-panel__body,
+.content-panel,
+.feature-panel,
+.recent-list li,
+.recent-list a,
+.collection-list__item,
+.collection-list__meta,
+.page__inner-wrap,
+.page__content,
+.page__title {
+  min-width: 0;
+}
+
 .section-label {
   margin: 0 0 0.9rem;
   color: var(--accent);
@@ -423,6 +438,7 @@ img {
   margin: 0;
   max-width: 12ch;
   font-size: clamp(2.35rem, 5vw, 4rem);
+  overflow-wrap: anywhere;
 }
 
 .hero-card__lead {
@@ -507,6 +523,7 @@ img {
 .profile-panel__body h2 {
   margin: 0;
   font-size: 1.45rem;
+  overflow-wrap: anywhere;
 }
 
 .profile-panel__body p {
@@ -551,6 +568,7 @@ img {
 .panel-title {
   margin-bottom: 0.9rem;
   font-size: 1.3rem;
+  overflow-wrap: anywhere;
 }
 
 .focus-list {
@@ -669,6 +687,7 @@ img {
   color: var(--text);
   font-size: 0.98rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
 }
 
 .collection {
@@ -751,6 +770,23 @@ img {
   font-size: 0.98rem;
   font-weight: 700;
   line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.page__title,
+.page__title a,
+.page__content p,
+.page__content li,
+.page__content blockquote,
+.collection-list__abstract,
+.collection-list__authors,
+.collection-list__role,
+.collection-list__org,
+.collection-list__location,
+.greedy-nav .visible-links a,
+.greedy-nav .hidden-links a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 @media (min-width: 1280px) {
