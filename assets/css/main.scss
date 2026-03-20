@@ -789,31 +789,109 @@ img {
   word-break: break-word;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1025px) {
+  .masthead__inner-wrap,
   #main {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    max-width: 1480px;
+  }
+
+  #main {
+    padding-left: clamp(1rem, 1.8vw, 1.75rem);
+    padding-right: clamp(1rem, 1.8vw, 1.75rem);
   }
 
   .hero-card {
-    grid-template-columns: minmax(0, 1.7fr) minmax(320px, 0.75fr);
+    grid-template-columns: minmax(0, 1.85fr) minmax(300px, 0.72fr);
   }
 
   .two-column-grid {
-    grid-template-columns: minmax(0, 1.5fr) minmax(340px, 0.85fr);
+    grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.82fr);
   }
 
-  .page__content {
+  .masthead .site-title,
+  .masthead .site-title:visited {
     font-size: 0.96rem;
   }
 
+  .greedy-nav .visible-links a,
+  .greedy-nav .hidden-links a {
+    font-size: 0.84rem;
+  }
+
+  .hero-card h1 {
+    max-width: 14ch;
+    font-size: clamp(2.05rem, 3.8vw, 3.3rem);
+  }
+
+  .hero-card__lead {
+    max-width: 48rem;
+    font-size: 0.96rem;
+  }
+
+  .section-label,
+  .meta-line,
+  .recent-list__date,
+  .recent-list__category,
+  .collection-list__venue,
+  .collection-list__date,
+  .page__meta {
+    font-size: 0.72rem;
+  }
+
+  .panel-title {
+    font-size: 1.18rem;
+  }
+
+  .profile-panel__body h2 {
+    font-size: 1.28rem;
+  }
+
+  .page__title {
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+  }
+
+  .archive__subtitle,
+  .collection__heading {
+    font-size: 1.08rem;
+  }
+
+  .page__content {
+    font-size: 0.94rem;
+    line-height: 1.82;
+  }
+
+  .page__content h2,
+  .page__content h3,
+  .page__content h4 {
+    font-size: 1.22rem;
+  }
+
   .recent-list__title,
+  .collection-list__title {
+    font-size: 0.92rem;
+  }
+
   .collection-list__abstract,
   .collection-list__authors,
   .collection-list__role,
   .collection-list__org,
   .collection-list__location {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .masthead__inner-wrap,
+  #main {
+    max-width: 1600px;
+  }
+
+  .hero-card {
+    grid-template-columns: minmax(0, 1.95fr) minmax(320px, 0.68fr);
+  }
+
+  .two-column-grid {
+    grid-template-columns: minmax(0, 1.7fr) minmax(340px, 0.8fr);
   }
 }
 
