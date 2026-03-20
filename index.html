@@ -8,10 +8,6 @@ classes: wide portfolio-home
 {% assign publications = site.posts | where_exp: "post", "post.categories contains 'Publication'" | sort: "date" | reverse %}
 {% assign projects = site.posts | where_exp: "post", "post.categories contains 'Projects'" | sort: "date" | reverse %}
 {% assign news = site.posts | where_exp: "post", "post.categories contains 'News'" | sort: "date" | reverse %}
-{% assign start_post = site.posts | sort: "date" | first %}
-{% assign start_year = start_post.date | date: "%Y" | plus: 0 %}
-{% assign current_year = "now" | date: "%Y" | plus: 0 %}
-{% assign years_active = current_year | minus: start_year | plus: 1 %}
 {% assign latest_publication = publications | first %}
 {% assign latest_project = projects | first %}
 {% assign latest_news = news | first %}
@@ -72,20 +68,6 @@ classes: wide portfolio-home
         <li>Human-centered evaluation of student and teacher interaction with AI</li>
       </ul>
 
-      <div class="stats-row">
-        <div class="stat-card">
-          <strong>{{ publications.size }}</strong>
-          <span>Publications</span>
-        </div>
-        <div class="stat-card">
-          <strong>{{ projects.size }}</strong>
-          <span>Projects</span>
-        </div>
-        <div class="stat-card">
-          <strong>{{ years_active }}</strong>
-          <span>Years of work</span>
-        </div>
-      </div>
     </article>
   </section>
 

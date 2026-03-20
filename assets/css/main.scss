@@ -585,35 +585,6 @@ img {
   margin-top: 0.45rem;
 }
 
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.8rem;
-  margin-top: 1.35rem;
-}
-
-.stat-card {
-  padding: 1rem;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface-soft);
-}
-
-.stat-card strong {
-  display: block;
-  color: var(--text);
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-
-.stat-card span {
-  display: block;
-  margin-top: 0.3rem;
-  color: var(--text-soft);
-  font-size: 0.86rem;
-}
-
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -966,7 +937,6 @@ img {
     width: 100%;
   }
 
-  .stats-row,
   .highlight-grid {
     grid-template-columns: 1fr;
   }
