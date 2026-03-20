@@ -148,8 +148,16 @@ content:
         type: image
         options:
           media: images
+      - name: pdf_file
+        label: PDF Issue File
+        type: file
+        description: If a PDF is attached, the issue will open in a page-by-page book viewer.
+        options:
+          media: documents
+          extensions: [pdf]
       - name: spreads
         label: Pages
+        description: Optional fallback when you are not using a PDF issue file.
         component: blog_spread
         list:
           collapsible:

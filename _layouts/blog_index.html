@@ -58,7 +58,11 @@ layout: default
                   <p class="issue-card__summary">{{ issue_summary | truncate: 170 }}</p>
                 {% endif %}
                 <p class="issue-card__footer">
-                  <span>{{ spread_count }} page{% if spread_count != 1 %}s{% endif %}</span>
+                  {% if issue.pdf_file %}
+                    <span>PDF issue</span>
+                  {% else %}
+                    <span>{{ spread_count }} page{% if spread_count != 1 %}s{% endif %}</span>
+                  {% endif %}
                   <span>Open issue</span>
                 </p>
               </div>

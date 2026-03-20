@@ -1,6 +1,9 @@
 <!-- start custom footer snippets -->
 
 {% if page.layout == "blog_index" or page.layout == "blog_issue" %}
+  {% if page.layout == "blog_issue" and page.pdf_file %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  {% endif %}
   <script src="{{ '/assets/js/blog-viewer.js' | relative_url }}"></script>
 {% endif %}
 

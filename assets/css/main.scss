@@ -1210,6 +1210,44 @@ img {
   background: #fbfcff;
 }
 
+.issue-sheet__surface--pdf {
+  display: grid;
+  gap: 1rem;
+  place-items: center;
+  background:
+    linear-gradient(180deg, #eef3fb 0%, #f7faff 100%);
+}
+
+.issue-sheet__pdf-frame {
+  width: 100%;
+  min-height: 720px;
+  display: grid;
+  place-items: center;
+}
+
+.issue-sheet__canvas {
+  display: block;
+  width: 100%;
+  max-width: 920px;
+  height: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 26px 48px rgba(18, 31, 53, 0.18);
+}
+
+.issue-sheet__loading {
+  margin: 0;
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.issue-sheet__loading.is-error {
+  color: #b42318;
+}
+
 .issue-sheet__figure {
   margin: 0;
 }
@@ -1361,6 +1399,10 @@ img {
   }
 
   .issue-sheet__surface {
+    min-height: 0;
+  }
+
+  .issue-sheet__pdf-frame {
     min-height: 0;
   }
 
