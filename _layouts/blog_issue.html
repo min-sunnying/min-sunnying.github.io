@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+  <article class="blog-issue">
+    <a class="blog-back-link text-link" href="{{ '/blog/' | relative_url }}">Back to Blog</a>
+
+    <header class="issue-hero content-panel">
+      <div class="issue-hero__copy">
+        <p class="section-label">{{ page.issue_label | default: "Issue" }}</p>
+        <h1 class="page__title">{{ page.title }}</h1>
+        {% if page.summary %}
+          <p class="issue-hero__summary">{{ page.summary }}</p>
+        {% endif %}
+        <p class="issue-hero__meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+      </div>
+
+      <div class="issue-hero__cover">
+        {% if page.cover %}
+          {% if page.cover contains '://' %}
+            <img src="{{ page.cover }}" alt="{{ page.title | escape }} cover">
+          {% else %}
+            <img src="{{ page.cover | relative_url }}" alt="{{ page.title | escape }} cover">
+          {% endif %}
+        {% else %}
+          <div class="issue-hero__placeholder">
+            <span>{{ page.issue_label | default: "Issue" }}</span>
+            <strong>{{ page.title }}</strong>
+          </div>
+        {% endif %}
+      </div>
+    </header>
+
+    {% include blog-viewer.html
+      label=page.issue_label
+      title=page.title
+      summary=page.summary
+      spreads=page.spreads
+    %}
+
+    {% assign notes = content | strip_html | strip %}
+    {% if notes != "" %}
+      <section class="content-panel issue-notes">
+        <p class="section-label">Notes</p>
+        <div class="page__content">
+          {{ content }}
+        </div>
+      </section>
+    {% endif %}
+  </article>
+</div>

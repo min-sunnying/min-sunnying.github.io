@@ -3,6 +3,32 @@ settings:
   content:
     merge: true
 
+components:
+  blog_spread:
+    label: Blog Page
+    type: object
+    fields:
+      - name: kicker
+        label: Kicker
+        type: string
+      - name: title
+        label: Page Title
+        type: string
+      - name: image
+        label: Page Image
+        type: image
+        options:
+          media: images
+      - name: alt
+        label: Image Alt Text
+        type: string
+      - name: caption
+        label: Caption
+        type: text
+      - name: body
+        label: Page Body
+        type: text
+
 media:
   - name: images
     label: Images
@@ -75,6 +101,62 @@ content:
         type: string
       - name: body
         label: Content
+        type: rich-text
+        options:
+          media: images
+  - name: blog
+    label: Blog Issues
+    type: collection
+    path: _blog
+    format: yaml-frontmatter
+    subfolders: false
+    exclude:
+      - .gitkeep
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, issue_label]
+      primary: title
+      sort: [date, title]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: layout
+        label: Layout
+        type: string
+        hidden: true
+        default: blog_issue
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: issue_label
+        label: Issue Label
+        type: string
+        description: Examples: Vol. 01, Summer 2026, Notebook 03
+      - name: summary
+        label: Summary
+        type: text
+      - name: cover
+        label: Cover Image
+        type: image
+        options:
+          media: images
+      - name: spreads
+        label: Pages
+        component: blog_spread
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{fields.title} ({index})"
+      - name: body
+        label: Notes
         type: rich-text
         options:
           media: images

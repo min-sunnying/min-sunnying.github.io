@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+{% assign issues = site.blog | sort: "date" | reverse %}
+
+<div id="main" role="main">
+  <div class="blog-hub">
+    <header class="blog-hub__hero content-panel">
+      <div class="blog-hub__intro">
+        <p class="section-label">{{ page.intro_label | default: page.title }}</p>
+        <h1 class="page__title">{{ page.intro_heading | default: page.title }}</h1>
+        <div class="page__content">
+          {{ content }}
+        </div>
+      </div>
+
+      <div class="blog-hub__aside">
+        <div class="blog-hub__stat">
+          <span class="blog-hub__stat-value">{{ issues.size }}</span>
+          <span class="blog-hub__stat-label">Published issues</span>
+        </div>
+        <p class="blog-hub__aside-copy">
+          Add future issues in the `Blog Issues` collection. Covers and page images will render in
+          a dedicated viewer rather than the default post list.
+        </p>
+      </div>
+    </header>
+
+    {% if issues.size > 0 %}
+      <section class="blog-shelf" aria-label="Blog issues">
+        {% for issue in issues %}
+          {% assign spread_count = issue.spreads | size %}
+          {% capture issue_summary %}{{ issue.summary | default: issue.excerpt | strip_html | strip_newlines | strip }}{% endcapture %}
+          <article class="issue-card">
+            <a class="issue-card__link" href="{{ issue.url | relative_url }}">
+              <div class="issue-card__cover">
+                {% if issue.cover %}
+                  {% if issue.cover contains '://' %}
+                    <img src="{{ issue.cover }}" alt="{{ issue.title | escape }} cover">
+                  {% else %}
+                    <img src="{{ issue.cover | relative_url }}" alt="{{ issue.title | escape }} cover">
+                  {% endif %}
+                {% else %}
+                  <div class="issue-card__placeholder">
+                    <span class="issue-card__placeholder-label">{{ issue.issue_label | default: "Issue" }}</span>
+                    <strong>{{ issue.title }}</strong>
+                  </div>
+                {% endif %}
+              </div>
+
+              <div class="issue-card__body">
+                <p class="issue-card__meta">
+                  {{ issue.issue_label | default: "Issue" }} / {{ issue.date | date: "%B %-d, %Y" }}
+                </p>
+                <h2 class="issue-card__title">{{ issue.title }}</h2>
+                {% if issue_summary != "" %}
+                  <p class="issue-card__summary">{{ issue_summary | truncate: 170 }}</p>
+                {% endif %}
+                <p class="issue-card__footer">
+                  <span>{{ spread_count }} page{% if spread_count != 1 %}s{% endif %}</span>
+                  <span>Open issue</span>
+                </p>
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      </section>
+    {% else %}
+      <section class="blog-empty content-panel">
+        <p class="section-label">No Issues Yet</p>
+        <h2 class="panel-title">The rack is ready for your first issue.</h2>
+        <p>
+          When you add a new item in the `Blog Issues` collection, it will appear here as a cover
+          card and open in a page-turn viewer.
+        </p>
+      </section>
+
+      {% include blog-viewer.html
+        label=page.preview_label
+        title=page.preview_heading
+        summary=page.preview_summary
+        spreads=page.preview_spreads
+        theme='preview'
+      %}
+    {% endif %}
+  </div>
+</div>

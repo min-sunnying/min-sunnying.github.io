@@ -1,0 +1,73 @@
+{% assign spreads = include.spreads %}
+
+{% if spreads and spreads.size > 0 %}
+  <section class="issue-viewer content-panel{% if include.theme == 'preview' %} issue-viewer--preview{% endif %}" data-issue-viewer>
+    <div class="issue-viewer__header">
+      <div>
+        <p class="section-label">{{ include.label | default: "Issue" }}</p>
+        <h2 class="panel-title">{{ include.title }}</h2>
+      </div>
+
+      <div class="issue-viewer__nav" aria-label="Page navigation">
+        <button class="issue-viewer__button" type="button" data-issue-prev>Previous</button>
+        <div class="issue-viewer__count">
+          <span data-issue-current>1</span>
+          <span>/</span>
+          <span>{{ spreads.size }}</span>
+        </div>
+        <button class="issue-viewer__button" type="button" data-issue-next>Next</button>
+      </div>
+    </div>
+
+    {% if include.summary %}
+      <p class="issue-viewer__summary">{{ include.summary }}</p>
+    {% endif %}
+
+    <div class="issue-viewer__stage" tabindex="0">
+      {% for spread in spreads %}
+        {% assign plain_body = spread.body | default: "" | strip %}
+        <article class="issue-sheet" data-issue-page data-page-index="{{ forloop.index0 }}">
+          <div class="issue-sheet__folio">
+            <span>{{ include.label | default: "Issue" }}</span>
+            <span>{{ forloop.index }}</span>
+          </div>
+
+          <div class="issue-sheet__surface{% if spread.image %} issue-sheet__surface--image{% endif %}">
+            {% if spread.image %}
+              <figure class="issue-sheet__figure">
+                {% if spread.image contains '://' %}
+                  <img src="{{ spread.image }}" alt="{{ spread.alt | default: spread.title | default: include.title | escape }}">
+                {% else %}
+                  <img src="{{ spread.image | relative_url }}" alt="{{ spread.alt | default: spread.title | default: include.title | escape }}">
+                {% endif %}
+                {% if spread.caption %}
+                  <figcaption>{{ spread.caption }}</figcaption>
+                {% endif %}
+              </figure>
+            {% else %}
+              <div class="issue-sheet__editorial">
+                {% if spread.kicker %}
+                  <p class="issue-sheet__kicker">{{ spread.kicker }}</p>
+                {% endif %}
+                {% if spread.title %}
+                  <h3 class="issue-sheet__title">{{ spread.title }}</h3>
+                {% endif %}
+                {% if plain_body != "" %}
+                  <div class="issue-sheet__body">{{ spread.body | markdownify }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="issue-viewer__pagination" aria-label="Jump to a page">
+      {% for spread in spreads %}
+        <button class="issue-viewer__dot" type="button" data-issue-jump="{{ forloop.index0 }}" aria-label="Go to page {{ forloop.index }}">
+          {{ forloop.index }}
+        </button>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
