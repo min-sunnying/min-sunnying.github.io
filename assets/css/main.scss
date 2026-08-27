@@ -10,11 +10,13 @@
   --surface-soft: #eef3fb;
   --text: #18212f;
   --text-soft: #5a6475;
-  --line: rgba(24, 33, 47, 0.12);
+  --line: rgba(24, 33, 47, 0.16);
   --line-strong: rgba(24, 33, 47, 0.2);
   --accent: #2457d6;
   --accent-soft: #e8efff;
-  --shadow: 0 18px 42px rgba(18, 31, 53, 0.08);
+  --shadow: none;
+  --radius: 10px;
+  --radius-sm: 6px;
   --font-display: "Manrope", "Helvetica Neue", Arial, sans-serif;
   --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
@@ -25,9 +27,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at top right, rgba(36, 87, 214, 0.08), transparent 28%),
-    linear-gradient(180deg, #f8faff 0%, #f4f7fb 100%);
+  background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   letter-spacing: -0.01em;
@@ -86,7 +86,7 @@ a:focus {
 }
 
 img {
-  border-radius: 18px;
+  border-radius: var(--radius);
 }
 
 .masthead {
@@ -94,9 +94,8 @@ img {
   top: 0;
   z-index: 30;
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(24, 33, 47, 0.08);
-  background: rgba(245, 247, 251, 0.86);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
 }
 
 .masthead__inner-wrap,
@@ -141,7 +140,7 @@ img {
 
 .greedy-nav .hidden-links {
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -149,7 +148,7 @@ img {
 .greedy-nav__toggle {
   color: var(--text);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   background: var(--surface);
 }
 
@@ -170,6 +169,16 @@ img {
   box-shadow: none;
 }
 
+/* No page on this site renders the author sidebar, so reclaim the
+   200-300px gutter Minimal Mistakes reserves for it. Without this the
+   floated content sits hard against the right edge of #main. */
+.archive,
+.page {
+  float: none;
+  width: 100%;
+  padding-right: 0;
+}
+
 .archive {
   min-width: 0;
 }
@@ -178,7 +187,7 @@ img {
 .content-panel,
 .sidebar .h-card {
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -202,7 +211,7 @@ img {
 
 .author__avatar img {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius);
 }
 
 .author__name a,
@@ -253,7 +262,7 @@ img {
 
 .page__title {
   margin-bottom: 0.9rem;
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-size: clamp(1.6rem, 2.4vw, 2.1rem);
 }
 
 .page__title a:hover,
@@ -355,7 +364,7 @@ img {
 
 .page__content pre {
   border: 1px solid var(--line);
-  border-radius: 18px;
+  border-radius: var(--radius);
   background: #0f172a;
 }
 
@@ -437,7 +446,7 @@ img {
 .hero-card h1 {
   margin: 0;
   max-width: 12ch;
-  font-size: clamp(2.35rem, 5vw, 4rem);
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
   overflow-wrap: anywhere;
 }
 
@@ -510,8 +519,8 @@ img {
   gap: 1rem;
   align-content: start;
   padding: 1.35rem;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #fbfdff 0%, #f4f7fd 100%);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
 }
 
 .profile-panel__image img {
@@ -548,10 +557,9 @@ img {
   list-style: none;
 }
 
-.two-column-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.9fr);
-  gap: 1.5rem;
+.about-panel__focus-title {
+  margin-top: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .prose-block p,
@@ -670,7 +678,7 @@ img {
 .collection__year {
   padding: 1.6rem;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
 }
@@ -708,7 +716,7 @@ img {
   width: 96px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: var(--radius);
   background: var(--surface-soft);
 }
 
@@ -775,10 +783,6 @@ img {
     grid-template-columns: minmax(0, 1.85fr) minmax(300px, 0.72fr);
   }
 
-  .two-column-grid {
-    grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.82fr);
-  }
-
   .masthead .site-title,
   .masthead .site-title:visited {
     font-size: 0.96rem;
@@ -791,7 +795,7 @@ img {
 
   .hero-card h1 {
     max-width: 14ch;
-    font-size: clamp(2.05rem, 3.8vw, 3.3rem);
+    font-size: clamp(1.9rem, 3.2vw, 2.5rem);
   }
 
   .hero-card__lead {
@@ -859,10 +863,6 @@ img {
 
   .hero-card {
     grid-template-columns: minmax(0, 1.95fr) minmax(320px, 0.68fr);
-  }
-
-  .two-column-grid {
-    grid-template-columns: minmax(0, 1.7fr) minmax(340px, 0.8fr);
   }
 }
 
@@ -935,7 +935,7 @@ img {
   display: grid;
   gap: 1rem;
   padding: 1.4rem;
-  border-radius: 20px;
+  border-radius: var(--radius);
   background: var(--surface-soft);
 }
 
@@ -980,7 +980,7 @@ img {
   height: 100%;
   padding: 1.1rem;
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: var(--radius);
   background: var(--surface);
   box-shadow: var(--shadow);
   color: var(--text);
@@ -996,9 +996,9 @@ img {
 
 .issue-card__cover {
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: var(--radius);
   aspect-ratio: 3 / 4;
-  background: linear-gradient(180deg, #f7f9fd 0%, #edf2fb 100%);
+  background: var(--surface-soft);
 }
 
 .issue-card__cover img {
@@ -1014,9 +1014,7 @@ img {
   display: grid;
   align-content: space-between;
   padding: 1.25rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(232, 239, 255, 0.82)),
-    linear-gradient(145deg, #eef3fb, #f9fbff);
+  background: var(--surface-soft);
 }
 
 .issue-card__placeholder-label,
@@ -1106,7 +1104,7 @@ img {
 
 .issue-hero__cover {
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: var(--radius);
   aspect-ratio: 3 / 4;
   background: var(--surface-soft);
 }
@@ -1199,9 +1197,9 @@ img {
   min-height: 720px;
   padding: clamp(1.25rem, 2vw, 1.75rem);
   border: 1px solid rgba(24, 33, 47, 0.1);
-  border-radius: 24px;
+  border-radius: var(--radius);
   background: #ffffff;
-  box-shadow: 0 22px 54px rgba(18, 31, 53, 0.08);
+  box-shadow: var(--shadow);
 }
 
 .issue-sheet__surface--image {
@@ -1214,8 +1212,7 @@ img {
   display: grid;
   gap: 1rem;
   place-items: center;
-  background:
-    linear-gradient(180deg, #eef3fb 0%, #f7faff 100%);
+  background: var(--surface-soft);
 }
 
 .issue-sheet__pdf-frame {
@@ -1231,8 +1228,8 @@ img {
   max-width: 920px;
   height: auto;
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 26px 48px rgba(18, 31, 53, 0.18);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
 }
 
 .issue-sheet__loading {
@@ -1337,7 +1334,6 @@ img {
 
 @media (max-width: 1024px) {
   .hero-card,
-  .two-column-grid,
   .highlight-grid,
   .blog-hub__hero,
   .issue-hero {
