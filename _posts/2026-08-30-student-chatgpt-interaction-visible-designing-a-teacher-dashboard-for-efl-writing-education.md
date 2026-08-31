@@ -2,7 +2,7 @@
 layout: posts
 title: "Student–ChatGPT Interaction Visible: Designing a Teacher Dashboard for
   EFL Writing Education"
-date: 2026-08-30
+date: 2026-04-22
 categories:
   - Publication
 authors: Minsun Kim,  Suyoun Lee, Yoosang Yoon, Junho Myung, Haneul Yoo,
