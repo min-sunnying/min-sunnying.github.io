@@ -159,7 +159,16 @@ img {
 }
 
 #main {
-  padding: 2rem 1rem 4rem;
+  padding: 1rem 1rem 4rem;
+}
+
+.masthead__inner-wrap {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.archive {
+  margin-top: 0;
 }
 
 .archive,
@@ -423,8 +432,6 @@ img {
 .profile-panel__body,
 .content-panel,
 .feature-panel,
-.recent-list li,
-.recent-list a,
 .collection-list__item,
 .collection-list__meta,
 .page__inner-wrap,
@@ -595,7 +602,7 @@ img {
 
 .highlight-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
@@ -612,61 +619,6 @@ img {
   font-size: 0.76rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-.section-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-}
-
-.recent-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.recent-list li + li {
-  margin-top: 0.1rem;
-}
-
-.recent-list a,
-.recent-list a:visited {
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1fr) 110px;
-  gap: 1rem;
-  align-items: start;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--text);
-  text-decoration: none;
-}
-
-.recent-list li:last-child a {
-  border-bottom: 0;
-}
-
-.recent-list a:hover,
-.recent-list a:focus {
-  color: var(--text);
-}
-
-.recent-list__date,
-.recent-list__category {
-  color: var(--text-soft);
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.recent-list__title {
-  color: var(--text);
-  font-size: 0.98rem;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
 }
 
 .collection {
@@ -805,8 +757,6 @@ img {
 
   .section-label,
   .meta-line,
-  .recent-list__date,
-  .recent-list__category,
   .collection-list__venue,
   .collection-list__date,
   .page__meta {
@@ -841,7 +791,6 @@ img {
     font-size: 1.22rem;
   }
 
-  .recent-list__title,
   .collection-list__title {
     font-size: 0.92rem;
   }
@@ -938,11 +887,6 @@ img {
 
   .highlight-grid {
     grid-template-columns: 1fr;
-  }
-
-  .recent-list a {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
   }
 
   .collection-list__item {

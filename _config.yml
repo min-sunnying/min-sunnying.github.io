@@ -19,13 +19,14 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Minsun Kim
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  My personal blog
+email:
+description: >-
+  Personal site of Minsun Kim, a PhD student and designer working on
+  human-centered AI, AI in education, and interactive systems.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://min-sunnying.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://www.minsun.kim" # the base hostname & protocol for your site
+repository: "min-sunnying/min-sunnying.github.io"
+github_username: min-sunnying
 
 include:
   - .htaccess
