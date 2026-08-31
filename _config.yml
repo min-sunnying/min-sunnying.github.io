@@ -128,9 +128,6 @@ plugins:
 #       layout: "page"
 
 collections:
-  blog:
-    output: true
-    permalink: /blog/:title/
   publication:
     output: true
     permalink: /publication/:title/
@@ -139,13 +136,6 @@ collections:
     permalink: /news/:title/
 
 defaults:
-  - scope:
-      path: "_blog"
-      type: "blog"
-    values:
-      layout: "blog_issue"
-      classes:
-        - wide
   - scope:
       path: "_posts"
       type: "posts"

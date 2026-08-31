@@ -32,15 +32,13 @@ _pages/                 Top-level pages, each with its own permalink
   publications.md         /publication/   grouped by year
   projects.md             /projects/      grouped by year
   news.md                 /news/          grouped by year
-  blog.md                 /blog/          magazine-style index
 _posts/                 All entries; the `categories` field decides where they appear
-_blog/                  Blog issues (collection, rendered by the blog_issue layout)
 _includes/about.md      The bio, pulled into index.html
-_layouts/               Theme layouts plus custom ones (collection, blog_index, blog_issue)
+_layouts/               Theme layouts plus a custom `collection` layout
 _data/navigation.yml    Main nav links
 assets/css/main.scss    ALL custom styling lives in this one file
 assets/images/          Images and post thumbnails
-assets/PDF/             PDFs served by the blog viewer
+assets/PDF/             PDFs linked from posts
 admin/ + .pages.yml     PagesCMS browser-based editor
 _config.yml             Site config, collections, and defaults
 ```
