@@ -11,17 +11,11 @@ permalink: /news/
   {% assign year_items = year.items | sort: 'date' | reverse %}
   <section class="collection__year">
     <h2 class="collection__heading">{{ year.name }}</h2>
-    <ul class="collection-list">
+    <ul class="news-lines">
       {% for post in year_items %}
-      <li class="collection-list__item">
-        <div class="collection-list__newsdate">
-          <p class="collection-list__date">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
-          </p>
-        </div>
-        <div class="collection-list__meta">
-          <a class="collection-list__title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </div>
+      <li class="news-line">
+        <time class="news-line__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+        <span class="news-line__title">{{ post.title }}</span>
       </li>
       {% endfor %}
     </ul>
