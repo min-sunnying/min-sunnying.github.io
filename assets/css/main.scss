@@ -857,6 +857,95 @@ img {
   margin: 0;
 }
 
+/* Publication detail page: metadata, abstract and an inline PDF. */
+.paper-meta,
+.paper-abstract,
+.paper-body,
+.paper-pdf {
+  margin-bottom: 1.5rem;
+}
+
+.paper-meta__venue {
+  margin: 0 0 0.4rem;
+  color: var(--text-soft);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.paper-meta__authors {
+  margin: 0 0 0.4rem;
+  line-height: 1.7;
+}
+
+.paper-meta__date {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+}
+
+.paper-meta__links {
+  margin: 0.6rem 0 0;
+}
+
+.paper-abstract p:last-child,
+.paper-body > .page__content > :last-child {
+  margin-bottom: 0;
+}
+
+.paper-abstract p:not(.section-label) {
+  line-height: 1.85;
+}
+
+.paper-pdf__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.paper-pdf__head .section-label {
+  margin: 0;
+}
+
+.paper-pdf__frame {
+  display: block;
+  width: 100%;
+  height: 78vh;
+  min-height: 420px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface-soft);
+}
+
+/* Minimal Mistakes runs FitVids, which wraps every <object> in a
+   .fluid-width-video-wrapper and absolutely positions it. The
+   fitvidsignore class opts out; this rule is the belt-and-braces. */
+.paper-pdf .fluid-width-video-wrapper {
+  position: static;
+  padding: 0 !important;
+}
+
+.paper-pdf .fluid-width-video-wrapper .paper-pdf__frame {
+  position: static;
+}
+
+.paper-pdf__fallback {
+  margin: 0;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+@media (max-width: 768px) {
+  .paper-pdf__frame {
+    height: 60vh;
+    min-height: 320px;
+  }
+}
+
 /* News index: one non-clickable line per item. */
 .news-lines {
   list-style: none;

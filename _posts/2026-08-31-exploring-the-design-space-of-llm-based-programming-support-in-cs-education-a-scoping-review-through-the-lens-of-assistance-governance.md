@@ -7,6 +7,7 @@ categories:
   - Publication
 authors: Minsun Kim, S. Moonwara A. Monisha, Zihan Wu, David H. Smith IV
 journal: VL/HCC 2026
+slides_pdf: /assets/PDF/vlhcc-pea-assistance-governance.pdf
 abstract_short: "As large language models (LLMs) become integrated into
   programming education, learner-facing systems increasingly differ in how that
   assistance is bounded, enacted, and controlled. These governance decisions are
