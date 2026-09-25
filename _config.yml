@@ -34,6 +34,9 @@ include:
   
 # Outputting
 permalink: /:categories/:title/
+# Accepted papers are dated by their upcoming venue, so posts can carry a
+# future date. Without this Jekyll silently skips them.
+future: true
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
